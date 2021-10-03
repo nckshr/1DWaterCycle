@@ -6,5 +6,5 @@ A python implementation of the 1D shallow water equation with rain drops that sl
 
 #Dependencies
 - This code requires numpy. To install, use ```pip install numpy```
-- The rendering part of the code uses [graphics.py](https://mcsp.wartburg.edu/zelle/python/graphics.py), an object-oriented python graphics lirbray from John Zelle. The graphics.py file is already included
+- The rendering part of the code uses [graphics.py](https://mcsp.wartburg.edu/zelle/python/graphics.py), an object-oriented python graphics lirbray from John Zelle. The graphics.py file is already included. *Note*: graphics.py relies on Tkinter, so if your python installation doesn't come with that you might need to grab it with pip.
 
