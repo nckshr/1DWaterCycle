@@ -73,7 +73,7 @@ def drawWater(win,polygons, heights,scale):
   win.update()
 
 def main():
-  
+  print("main")
   rain_chance = 0.1 
   signal.signal(signal.SIGINT, signal_handler)
   win = GraphWin("Water1D",600,600, autoflush=False)
@@ -95,7 +95,7 @@ def main():
   drawWater(win,polys,h,scale)
   #hv = [np.zeros_like(x)]*num_steps
   #i = 0
-  paused = True
+  paused = False
   drops_per_sec = 0.2
   last_start = time.time()
   drops = []
@@ -105,6 +105,7 @@ def main():
   while True:
     k = win.checkKey()
     if k == 'p':
+      print("toggle pause")
       paused = not paused
     elif k == 'r':
       h = (1.0/np.sqrt(0.5*2.0*np.pi)) * np.exp(-0.5*(np.power((positions-1.0)/0.5,2))) * 2
@@ -154,13 +155,7 @@ def main():
         h[14] = h[14] - 3 * time_elapsed
         if(heights_grid[14] < 5):
           drain = False
-      #end = time.time()
-      #print(f"simulation took {end - start}")
-      #start = time.time()
       drawWater(win,polys,heights_grid,scale)
-      #end = time.time()
-      #print(f"drawing took {end - start}")
-      #print(f"iteration: {i}")
     time.sleep(0.0016)
     #i = i+1
 
